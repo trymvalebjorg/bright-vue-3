@@ -18,6 +18,12 @@
               Smart Manual
             </router-link>
           </li>
+          <li>
+            <router-link to="/report" class="nav-link text-secondary">
+              <svg class="bi d-block mx-auto mb-1" width="24" height="24"><use xlink:href="#home"></use></svg>
+              Report
+            </router-link>
+          </li>
         </ul>
       </div>
     </div>
