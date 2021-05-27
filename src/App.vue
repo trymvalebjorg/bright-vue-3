@@ -1,5 +1,5 @@
 <template>
-  <TheHeader page-title="Bright"></TheHeader>
+  <TheHeader bright-title="Bright"></TheHeader>
   <main class="container">
     <router-view></router-view>
   </main>
