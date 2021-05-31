@@ -1,4 +1,14 @@
 // Custom colors
-$dark: #1a171e;
+$primary: #405c6a;
+$secondary: #56425c;
+$success: #9fd18b;
 
 @import 'node_modules/bootstrap/scss/bootstrap';
+
+// Create your own map
+$custom-colors: (
+  'tertiary': #9fd18b,
+);
+
+// Merge the maps
+$theme-colors: map-merge($theme-colors, $custom-colors);

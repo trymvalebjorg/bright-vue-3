@@ -23,6 +23,8 @@ const routes = [
 
 const router = createRouter({
   history: createWebHistory(),
+  linkActiveClass: 'text-success',
+  linkExactActiveClass: 'text-success',
   routes,
 })
 
