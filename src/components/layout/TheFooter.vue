@@ -1,9 +1,5 @@
 <template>
-  <footer>
-    <div>
-      <h3>Bright @ {{ currentYear }}</h3>
-    </div>
-  </footer>
+  <footer></footer>
 </template>
 
 <script>
