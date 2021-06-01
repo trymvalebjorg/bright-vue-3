@@ -1,6 +1,6 @@
 <template>
-  <footer class="bg-light text-center text-lg-start footer">
-    <!-- <div class="container p-4">
+  <footer class="footer bg-light text-center text-lg-start">
+    <div class="container p-4">
       <div class="row">
         <div class="col-lg-6 col-md-12 mb-4 mb-md-0">
           <h5 class="text-uppercase">Footer text</h5>
@@ -20,7 +20,8 @@
     </div>
     <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
       © 2021 Bright
-    </div> -->
+    </div>
+    -->
   </footer>
 </template>
 
@@ -36,4 +37,10 @@ export default {
 }
 </script>
 
-<style scoped></style>
+<style scoped>
+.footer {
+  position: relative;
+  width: 100%;
+  bottom: 0;
+}
+</style>

@@ -3,12 +3,19 @@ import SmartManual from '../views/SmartManualPage'
 import Home from '../views/HomePage'
 import Report from '../views/Report'
 import RepairPage from '../views/RepairPage'
+import ELearning from '../views/ELearning'
+import ThankyouPage from '../views/ThankyouPage'
 
 const routes = [
   {
     name: 'Home',
     path: '/',
     component: Home,
+  },
+  {
+    name: 'ELearning',
+    path: '/elearning',
+    component: ELearning,
   },
   {
     name: 'SmartManual',
@@ -24,6 +31,11 @@ const routes = [
     name: 'Report',
     path: '/report',
     component: Report,
+  },
+  {
+    name: 'Thankyou',
+    path: '/thankyou',
+    component: ThankyouPage,
   },
 ]
 

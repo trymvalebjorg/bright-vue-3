@@ -24,6 +24,12 @@
               Report
             </router-link>
           </li>
+          <li>
+            <router-link to="/elearning" class="nav-link link-light">
+              <BIconPlayBtn class="d-block mx-auto" height="1.5rem" width="1.5rem" />
+              E-learning
+            </router-link>
+          </li>
         </ul>
       </div>
     </div>
@@ -31,7 +37,7 @@
 </template>
 
 <script>
-import { BIconHouseDoor, BIconBook, BIconPencilSquare } from 'bootstrap-icons-vue'
+import { BIconHouseDoor, BIconBook, BIconPencilSquare, BIconPlayBtn } from 'bootstrap-icons-vue'
 import TheLogo from '../assets/TheLogo'
 
 export default {
@@ -42,7 +48,7 @@ export default {
     },
   },
   setup() {},
-  components: { BIconHouseDoor, BIconBook, BIconPencilSquare, TheLogo },
+  components: { BIconHouseDoor, BIconBook, BIconPencilSquare, BIconPlayBtn, TheLogo },
 }
 </script>
 
