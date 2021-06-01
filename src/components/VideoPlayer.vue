@@ -14,6 +14,6 @@ export default {
 .video {
     width: 1000px;
     height: 635px;
-    margin-left: -100px;
+    margin-left: -50px;
 }
 </style>

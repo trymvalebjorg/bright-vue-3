@@ -26,6 +26,6 @@ export default {
 }
 
 .content {
-    margin-left: 40%;
+    margin-left: 10%;
 }
 </style>
