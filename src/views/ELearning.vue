@@ -1,8 +1,10 @@
 <template>
-  <div>
-      <h3>E-Learning</h3>
-      <video-player></video-player>
+  <div class="row py-lg-5">
+      <h1 class="fw-light text-center">E-Learning</h1>
   </div>
+  <div>
+      <video-player></video-player>
+      </div>
 </template>
 
 <script>
