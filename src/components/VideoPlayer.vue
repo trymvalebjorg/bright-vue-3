@@ -13,7 +13,7 @@ export default {
 <style scoped>
 .video {
     width: 1000px;
-    height: 700px;
-    margin-left: -200px;
+    height: 635px;
+    margin-left: -100px;
 }
 </style>
