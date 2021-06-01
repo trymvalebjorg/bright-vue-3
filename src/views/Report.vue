@@ -1,11 +1,10 @@
 <template>
-  <div>
-    <h3>Report</h3>
-  </div>
+  <div class="container"></div>
 </template>
-
 <script>
-export default {}
+export default {
+  components: {},
+}
 </script>
 
 <style></style>

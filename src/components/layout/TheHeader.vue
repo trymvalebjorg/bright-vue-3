@@ -16,3 +16,4 @@ export default {
   components: { TheNavbar },
 }
 </script>
+<style scoped></style>

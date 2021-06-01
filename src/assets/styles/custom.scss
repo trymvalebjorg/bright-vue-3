@@ -12,3 +12,7 @@ $custom-colors: (
 
 // Merge the maps
 $theme-colors: map-merge($theme-colors, $custom-colors);
+
+// Plyr specific
+$plyr-color-main: $primary;
+@import 'node_modules/plyr/src/sass/plyr.scss';

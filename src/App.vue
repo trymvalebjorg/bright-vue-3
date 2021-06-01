@@ -1,6 +1,6 @@
 <template>
   <TheHeader bright-title="Bright"></TheHeader>
-  <main class="container">
+  <main class="container pt-4">
     <router-view></router-view>
   </main>
   <TheFooter page-title="Bright"></TheFooter>

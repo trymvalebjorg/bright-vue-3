@@ -2,6 +2,7 @@ import { createWebHistory, createRouter } from 'vue-router'
 import SmartManual from '../views/SmartManualPage'
 import Home from '../views/HomePage'
 import Report from '../views/Report'
+import RepairPage from '../views/RepairPage'
 
 const routes = [
   {
@@ -13,6 +14,11 @@ const routes = [
     name: 'SmartManual',
     path: '/manual',
     component: SmartManual,
+  },
+  {
+    name: 'RepairPage',
+    path: '/manual/:id',
+    component: RepairPage,
   },
   {
     name: 'Report',
