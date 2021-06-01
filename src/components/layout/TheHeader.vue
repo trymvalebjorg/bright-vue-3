@@ -8,7 +8,7 @@ import TheNavbar from './TheNavbar'
 export default {
   name: 'TheHeader',
   props: {
-    pageTitle: {
+    brightTitle: {
       type: String,
     },
   },
