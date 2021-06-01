@@ -1,16 +1,16 @@
 <template>
 <div class="dropdown">
   <button class="btn btn-primary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-    Battery Replacement
+    Section 1: Battery Replacement
   </button>
   <button class="btn btn-primary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-    PCB Replacement
+    Section 2: PCB Replacement
   </button>
   <button class="btn btn-primary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-    Solar Panel Replacement
+    Section 3: Solar Panel Replacement
   </button>
   <button class="btn btn-primary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-    Section 4
+    Section 4: 
   </button>
   <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
     <a class="dropdown-item" href="#">Action</a>
@@ -30,6 +30,6 @@ export default {
 .btn {
   margin: 20px;
   padding: 30px;
-  width: 300px;
+  width: 320px;
 }
 </style>
