@@ -1,7 +1,7 @@
 <template>
-  <section class="py-3 text-center container">
+  <section class="py-3">
     <div class="row py-lg-5">
-      <div class="col-lg-6 col-md-8 mx-auto">
+      <div class="col-lg-6 col-md-8 ">
         <h1 class="fw-light">Smart Manual</h1>
         <p class="lead text-muted">
           Vi i BRIGHT jobber tett med FNs bærekraftsmål, og derfor er produktene våre reparerbare og kan gjenvinnes.
@@ -12,13 +12,15 @@
 
   <section>
     <div class="row mb-5" v-for="(product, i) in productsList" :key="i">
-      <div class="col-lg-2">
+      <div class="col-lg-3 d-flex flex-column align-items-center ">
         <div class="row">
           <h3>{{ product.name }}</h3>
-          <img :src="`https://bright-web-api.azurewebsites.net/Images/products/${product.image}`" class="img-fluid d-none d-lg-block" alt="Picture of {{ product.name }}" />
+        </div>
+        <div class="row mt-4">
+          <img :src="`https://bright-web-api.azurewebsites.net/Images/products/${product.image}`" class="product-img d-none d-lg-flex p-0 m-0 align-middle" alt="Picture of {{ product.name }}" />
         </div>
       </div>
-      <vue-horizontal responsive class="col-lg-10 p-0">
+      <vue-horizontal responsive class="col-lg-9 p-0">
         <RepairList :productId="product.id"></RepairList>
       </vue-horizontal>
     </div>
@@ -46,4 +48,9 @@ export default {
 }
 </script>
 
-<style></style>
+<style>
+.product-img {
+  width: 12rem;
+  height: 11rem;
+}
+</style>

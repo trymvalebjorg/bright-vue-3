@@ -1,5 +1,5 @@
 <template>
-  <div class="row">
+  <div class="row mt-4">
     <div class="col-8">
       <div class="row mb-2">
         <h2 class="text-primary">{{ repair.title }}</h2>

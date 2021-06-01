@@ -1,27 +1,6 @@
 <template>
-  <footer class="footer bg-light text-center text-lg-start">
-    <div class="container p-4">
-      <div class="row">
-        <div class="col-lg-6 col-md-12 mb-4 mb-md-0">
-          <h5 class="text-uppercase">Footer text</h5>
-
-          <p>
-            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Iste atque ea quis molestias. Fugiat pariatur maxime quis culpa corporis vitae repudiandae aliquam voluptatem veniam, est atque cumque eum delectus sint!
-          </p>
-        </div>
-        <div class="col-lg-6 col-md-12 mb-4 mb-md-0">
-          <h5 class="text-uppercase">Footer text</h5>
-
-          <p>
-            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Iste atque ea quis molestias. Fugiat pariatur maxime quis culpa corporis vitae repudiandae aliquam voluptatem veniam, est atque cumque eum delectus sint!
-          </p>
-        </div>
-      </div>
-    </div>
-    <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
-      © 2021 Bright
-    </div>
-    -->
+  <footer class="d-flex justify-content-center align-items-center footer bg-light">
+    <h6 class="p-0 m-0">{{ pageTitle }} <span class="text-secondary">©</span> {{ currentYear }}</h6>
   </footer>
 </template>
 
@@ -33,14 +12,18 @@ export default {
       type: String,
     },
   },
-  setup() {},
+  setup() {
+    const currentYear = new Date().getFullYear()
+    return { currentYear }
+  },
 }
 </script>
 
 <style scoped>
 .footer {
-  position: relative;
-  width: 100%;
+  position: absolute;
   bottom: 0;
+  width: 100%;
+  height: 40px;
 }
 </style>
