@@ -1,5 +1,5 @@
 <template>
-  <footer class="bg-light text-center text-lg-start">
+  <footer class="footer bg-light text-center text-lg-start">
     <div class="container p-4">
       <div class="row">
         <div class="col-lg-6 col-md-12 mb-4 mb-md-0">
@@ -36,4 +36,10 @@ export default {
 }
 </script>
 
-<style scoped></style>
+<style scoped>
+.footer {
+  position: absolute;
+  width: 100%;
+  bottom: 0;
+}
+</style>

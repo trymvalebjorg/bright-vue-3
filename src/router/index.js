@@ -2,12 +2,18 @@ import { createWebHistory, createRouter } from 'vue-router'
 import SmartManual from '../views/SmartManualPage'
 import Home from '../views/HomePage'
 import Report from '../views/Report'
+import ELearning from '../views/ELearning'
 
 const routes = [
   {
     name: 'Home',
     path: '/',
     component: Home,
+  },
+  {
+    name: "ELearning",
+    path: "/elearning",
+    component: ELearning
   },
   {
     name: 'SmartManual',
