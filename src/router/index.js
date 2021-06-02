@@ -3,7 +3,7 @@ import SmartManual from '../views/SmartManualPage'
 import Home from '../views/HomePage'
 import ReportPage from '../views/ReportPage'
 import RepairPage from '../views/RepairPage'
-import ELearning from '../views/ELearning'
+import ELearningPage from '../views/ELearningPage'
 import ThankyouPage from '../views/ThankyouPage'
 
 const routes = [
@@ -13,9 +13,9 @@ const routes = [
     component: Home,
   },
   {
-    name: 'ELearning',
+    name: 'ELearningPage',
     path: '/elearning',
-    component: ELearning,
+    component: ELearningPage,
   },
   {
     name: 'SmartManual',

@@ -1,28 +1,28 @@
 <template>
-<div class="dropdown">
-  <button class="btn btn-primary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-    Section 1: Battery Replacement
-  </button>
-  <button class="btn btn-primary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-    Section 2: PCB Replacement
-  </button>
-  <button class="btn btn-primary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-    Section 3: Solar Panel Replacement
-  </button>
-  <button class="btn btn-primary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-    Section 4: 
-  </button>
-  <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-    <a class="dropdown-item" href="#">Action</a>
-    <a class="dropdown-item" href="#">Another action</a>
-    <a class="dropdown-item" href="#">Something else here</a>
+  <div class="accordion" id="accordion">
+    <div class="accordion-item">
+      <h2 class="accordion-header" :id="`heading${id}`">
+        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" :data-bs-target="`#collapse${id}`" aria-expanded="false" :aria-controls="`collapse${id}`">Section {{ count + 1 }}: {{ title }}</button>
+      </h2>
+      <div :id="`collapse${id}`" class="accordion-collapse collapse" :aria-labelledby="`heading${id}`" data-bs-parent="#accordion">
+        <div class="accordion-body px-0">
+          <StepsList :repairId="id" v-bind="$attrs" />
+        </div>
+      </div>
+    </div>
   </div>
-</div>
 </template>
 
 <script>
+import StepsList from './StepsList'
 export default {
-
+  props: {
+    id: Number,
+    count: Number,
+    title: String,
+  },
+  setup() {},
+  components: { StepsList },
 }
 </script>
 

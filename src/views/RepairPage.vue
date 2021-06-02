@@ -31,11 +31,11 @@
                   {{ step.description }}
                 </div>
                 <div class="col-6">
-                  <vue-plyr>
+                  <VuePlyr>
                     <video controls playsinline>
                       <source :src="`https://bright-web-api.azurewebsites.net/Videos/${step.video}`" type="video/mp4" />
                     </video>
-                  </vue-plyr>
+                  </VuePlyr>
                 </div>
               </div>
 
@@ -85,6 +85,7 @@
 </template>
 
 <script>
+import VuePlyr from 'vue-plyr'
 import axios from 'axios'
 import { useRoute } from 'vue-router'
 import { reactive, toRefs } from 'vue'
@@ -119,6 +120,7 @@ export default {
     BIconSpeedometer,
     BIconBarChartSteps,
     BIconClock,
+    VuePlyr,
   },
 }
 </script>

@@ -32,83 +32,15 @@
       <div class="col">Start Smart</div>
     </div>
   </div>
-
-  <div class="container">
-    <div class="row">
-      <div class="bg-primary container">
-        <div class="row">Replaced parts:</div>
-        <div class="row">
-          <div class="col">col1</div>
-          <div class="col">col2</div>
-          <div class="col">col3</div>
-        </div>
-
-        <div class="row">
-          <div class="col">col1</div>
-          <div class="col">col2</div>
-          <div class="col">col3</div>
-        </div>
-
-        <div class="row">
-          <div class="col">col1</div>
-          <div class="col">col2</div>
-          <div class="col">col3</div>
-        </div>
-
-        <div class="row">
-          <div class="col">col1</div>
-          <div class="col">col2</div>
-          <div class="col">col3</div>
-        </div>
-      </div>
-    </div>
-
-    <br />
-
-    <div class="row">
-      <div class="bg-primary container">
-        <div class="row">Repaired parts:</div>
-        <div class="row">
-          <div class="col">col1</div>
-          <div class="col">col2</div>
-          <div class="col">col3</div>
-        </div>
-
-        <div class="row">
-          <div class="col">col1</div>
-          <div class="col">col2</div>
-          <div class="col">col3</div>
-        </div>
-
-        <div class="row">
-          <div class="col">col1</div>
-          <div class="col">col2</div>
-          <div class="col">col3</div>
-        </div>
-
-        <div class="row">
-          <div class="col">col1</div>
-          <div class="col">col2</div>
-          <div class="col">col3</div>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <br />
-
   <router-link to="/" class="btn btn-primary rounded-pill ps-4 report-btn">Send report <BIconArrowRightCircle width="2rem" height="1.5rem"/></router-link>
 </template>
 
 <script>
-import { BIconArrowRightCircle, /* BIconBatteryCharging, BIconCpuFill, BIconBezier2, BIconTextarea, BIconArchiveFill, BIconPower, BIconDisplayFill, BIconLightbulbFill */ } from 'bootstrap-icons-vue'
+import { BIconArrowRightCircle /* BIconBatteryCharging, BIconCpuFill, BIconBezier2, BIconTextarea, BIconArchiveFill, BIconPower, BIconDisplayFill, BIconLightbulbFill */ } from 'bootstrap-icons-vue'
 
 export default {
   components: {
     BIconArrowRightCircle,
-<<<<<<< HEAD
-  },
-=======
     //BIconBatteryCharging,
     //BIconCpuFill,
     //BIconBezier2,
@@ -117,8 +49,7 @@ export default {
     //BIconPower,
     //BIconDisplayFill,
     //BIconLightbulbFill
-  }
->>>>>>> origin/johann_branch
+  },
 }
 </script>
 

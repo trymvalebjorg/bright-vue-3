@@ -24,21 +24,66 @@
       </div>
     </div>
 
-    <div class="row">
-      <div class="col">
-        <div class="row">
-          <label class="row d-flex align-items-center">
-            <input type="checkbox" name="" value="" />
-          </label>
+    <div class="container">
+      <div class="row">
+        <div class="bg-primary container">
+          <div class="row">Replaced parts:</div>
+          <div class="row">
+            <div class="col">col1</div>
+            <div class="col">col2</div>
+            <div class="col">col3</div>
+          </div>
+
+          <div class="row">
+            <div class="col">col1</div>
+            <div class="col">col2</div>
+            <div class="col">col3</div>
+          </div>
+
+          <div class="row">
+            <div class="col">col1</div>
+            <div class="col">col2</div>
+            <div class="col">col3</div>
+          </div>
+
+          <div class="row">
+            <div class="col">col1</div>
+            <div class="col">col2</div>
+            <div class="col">col3</div>
+          </div>
         </div>
       </div>
-      <div class="col">
-        <div class="row"></div>
-      </div>
-      <div class="col">
-        <div class="row"></div>
+
+      <div class="row">
+        <div class="bg-primary container">
+          <div class="row">Repaired parts:</div>
+          <div class="row">
+            <div class="col">col1</div>
+            <div class="col">col2</div>
+            <div class="col">col3</div>
+          </div>
+
+          <div class="row">
+            <div class="col">col1</div>
+            <div class="col">col2</div>
+            <div class="col">col3</div>
+          </div>
+
+          <div class="row">
+            <div class="col">col1</div>
+            <div class="col">col2</div>
+            <div class="col">col3</div>
+          </div>
+
+          <div class="row">
+            <div class="col">col1</div>
+            <div class="col">col2</div>
+            <div class="col">col3</div>
+          </div>
+        </div>
       </div>
     </div>
+    <router-link to="/" class="btn btn-primary rounded-pill ps-4 report-btn">Send report <BIconArrowRightCircle width="2rem" height="1.5rem"/></router-link>
   </section>
 </template>
 <script>
