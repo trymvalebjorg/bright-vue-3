@@ -36,7 +36,7 @@ export default {
       repairs.repairsList = response.data
     })
 
-    // Steps
+    // Step
     const step = reactive({ step: {} })
 
     axios(`https://bright-web-api.azurewebsites.net/api/Steps/get-step-by-id/12`).then((response) => {
@@ -44,6 +44,7 @@ export default {
     })
 
     // Functions
+
     function showMedia(id) {
       axios(`https://bright-web-api.azurewebsites.net/api/Steps/get-step-by-id/${id}`).then((response) => {
         step.step = response.data

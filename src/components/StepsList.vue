@@ -1,7 +1,8 @@
 <template>
   <div class="list-group-flush">
     <button v-for="(step, i) in stepsList" :key="i" type="button" class="list-group-item list-group-item-action" aria-current="true" @click="stepClicked(step.id)">
-      {{ step.title }}
+      <BIconCircle />
+      <p>{{ step.title }}</p>
     </button>
   </div>
 </template>
@@ -9,9 +10,13 @@
 <script>
 import axios from 'axios'
 import { reactive, toRefs, toRef } from 'vue'
+import { BIconCircle } from 'bootstrap-icons-vue'
 export default {
   props: {
     repairId: Number,
+  },
+  components: {
+    BIconCircle,
   },
   setup(props, context) {
     const steps = reactive({ stepsList: [] })
