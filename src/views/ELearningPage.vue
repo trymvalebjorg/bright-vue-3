@@ -1,22 +1,25 @@
 <template>
-  <div class="row py-lg-5">
-    <h1 class="fw-light text-center">E-Learning</h1>
-  </div>
-  <div class="row">
-    <div class="col-8">
-      <VuePlyr v-if="step.video && !step.image" class="img-fluid">
-        <video controls playsinline>
-          <source :src="`https://bright-web-api.azurewebsites.net/Videos/${step.video}`" type="video/mp4" />
-        </video>
-      </VuePlyr>
-
-      <div v-if="step.image && !step.video">
-        <img :src="`https://bright-web-api.azurewebsites.net/Images/${step.image}`" class="img-fluid" :alt="`Image of ${step.title}`" />
+  <div class="row py-5">
+    <section class="col-8">
+      <div class="row mb-3">
+        <h2>{{ step.repair }}</h2>
+        <p>{{ step.description }}</p>
       </div>
-    </div>
-    <div class="col">
-      <CourseContent v-for="(repair, i) in repairsList" :key="i" :title="repair.title" :count="i" :id="repair.id" @stepClicked="showMedia" />
-    </div>
+      <div v-if="step.video">
+        <VuePlyr>
+          <video controls playsinline>
+            <source :src="`https://bright-web-api.azurewebsites.net/videos/${step.video}`" type="video/mp4" />
+          </video>
+        </VuePlyr>
+      </div>
+
+      <div v-else-if="step.image && !step.video">
+        <img :src="`https://bright-web-api.azurewebsites.net/images/${step.image}`" class="img-fluid" :alt="`Image of ${step.title}`" />
+      </div>
+    </section>
+    <aside class="col">
+      <CourseContent v-for="(repair, i) in repairsList" :key="i" :title="repair.title" :count="i" :id="repair.id" @stepClicked="getStep" />
+    </aside>
   </div>
 </template>
 
@@ -37,22 +40,36 @@ export default {
     })
 
     // Step
-    const step = reactive({ step: {} })
+    const step = reactive({})
 
-    axios(`https://bright-web-api.azurewebsites.net/api/Steps/get-step-by-id/12`).then((response) => {
-      step.step = response.data
-    })
-
+    if (step.id == undefined) {
+      axios('https://bright-web-api.azurewebsites.net/api/steps/get-first-step').then((response) => {
+        step.id = response.data.id
+        step.title = response.data.title
+        step.description = response.data.description
+        step.image = response.data.image
+        step.video = response.data.video
+        step.repair = response.data.repair
+        step.completed = false
+        console.log(step)
+      })
+    }
     // Functions
 
-    function showMedia(id) {
+    function getStep(id) {
       axios(`https://bright-web-api.azurewebsites.net/api/Steps/get-step-by-id/${id}`).then((response) => {
-        step.step = response.data
+        step.id = response.data.id
+        step.title = response.data.title
+        step.description = response.data.description
+        step.image = response.data.image
+        step.video = response.data.video
+        step.repair = response.data.repair
+        step.completed = false
+        console.log(step)
       })
-      console.log(step)
     }
 
-    return { ...toRefs(repairs), ...toRefs(step), showMedia }
+    return { ...toRefs(repairs), step, getStep }
   },
 }
 </script>
