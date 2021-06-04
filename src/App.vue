@@ -1,8 +1,6 @@
 <template>
   <TheHeader bright-title="Bright"></TheHeader>
-  <main class="container">
-    <router-view></router-view>
-  </main>
+  <router-view></router-view>
   <TheFooter page-title="Bright"></TheFooter>
 </template>
 
@@ -11,14 +9,19 @@ import TheHeader from './components/layout/TheHeader'
 import TheFooter from './components/layout/TheFooter'
 import './assets/styles/custom.scss'
 import './assets/styles/style.scss'
-
 import 'bootstrap'
+import { useStore } from 'vuex'
 
 export default {
   name: 'App',
   components: {
     TheHeader,
     TheFooter,
+  },
+  setup() {
+    const store = useStore()
+    store.dispatch('products/getAllProducts')
+    store.dispatch('repairs/getAllRepairs')
   },
 }
 </script>

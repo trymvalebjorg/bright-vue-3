@@ -1,10 +1,12 @@
 <template>
-  <div class="list-group-flush">
-    <button v-for="(step, i) in stepsList" :key="i" type="button" class="list-group-item list-group-item-action d-flex align-items-center" aria-current="true" @click="stepClicked(step.id)">
-      <BIconCircle class="me-3" />
-      <p class="m-0">{{ step.title }}</p>
-    </button>
-  </div>
+  <main class="container">
+    <div class="list-group-flush">
+      <button v-for="(step, i) in stepsList" :key="i" type="button" class="list-group-item list-group-item-action d-flex align-items-center" aria-current="true" @click="stepClicked(step.id)">
+        <BIconCircle class="me-3" />
+        <p class="m-0">{{ step.title }}</p>
+      </button>
+    </div>
+  </main>
 </template>
 
 <script>

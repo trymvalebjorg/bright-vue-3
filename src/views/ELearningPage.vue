@@ -1,26 +1,27 @@
 <template>
-  <div class="row py-5">
-    <section class="col-8">
-      <div class="row mb-3">
-        <h2>{{ step.repair }}</h2>
-        <p>{{ step.description }}</p>
+  <main class="container">
+    <div class="row py-5">
+      <div class="col-8">
+        <div class="row mb-3">
+          <h2>{{ step.repair }}</h2>
+          <p>{{ step.description }}</p>
+        </div>
+        <div v-if="step.video">
+          <VuePlyr>
+            <video controls playsinline>
+              <source :src="`https://bright-web-api.azurewebsites.net/videos/${step.video}`" type="video/mp4" />
+            </video>
+          </VuePlyr>
+        </div>
+        <div v-else-if="step.image && !step.video">
+          <img :src="`https://bright-web-api.azurewebsites.net/images/${step.image}`" class="img-fluid" :alt="`Image of ${step.title}`" />
+        </div>
       </div>
-      <div v-if="step.video">
-        <VuePlyr>
-          <video controls playsinline>
-            <source :src="`https://bright-web-api.azurewebsites.net/videos/${step.video}`" type="video/mp4" />
-          </video>
-        </VuePlyr>
+      <div class="col">
+        <CourseContent v-for="(repair, i) in repairsList" :key="i" :title="repair.title" :count="i" :id="repair.id" @stepClicked="getStep" />
       </div>
-
-      <div v-else-if="step.image && !step.video">
-        <img :src="`https://bright-web-api.azurewebsites.net/images/${step.image}`" class="img-fluid" :alt="`Image of ${step.title}`" />
-      </div>
-    </section>
-    <aside class="col">
-      <CourseContent v-for="(repair, i) in repairsList" :key="i" :title="repair.title" :count="i" :id="repair.id" @stepClicked="getStep" />
-    </aside>
-  </div>
+    </div>
+  </main>
 </template>
 
 <script>
@@ -74,14 +75,4 @@ export default {
 }
 </script>
 
-<style scoped>
-.container {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  grid-template-rows: (2, 100px);
-}
-
-.content {
-  margin-left: 10%;
-}
-</style>
+<style scoped></style>

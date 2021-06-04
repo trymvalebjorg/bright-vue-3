@@ -4,7 +4,11 @@ const state = {
   all: [],
 }
 // getters
-const getters = {}
+const getters = {
+  getProducts: (state) => {
+    return state.all
+  },
+}
 
 // actions (dispatch)
 const actions = {
