@@ -11,7 +11,6 @@ import './assets/styles/custom.scss'
 import './assets/styles/style.scss'
 import 'bootstrap'
 import { useStore } from 'vuex'
-
 export default {
   name: 'App',
   components: {
@@ -22,6 +21,7 @@ export default {
     const store = useStore()
     store.dispatch('products/getAllProducts')
     store.dispatch('repairs/getAllRepairs')
+    store.dispatch('repairs/getAllSteps')
   },
 }
 </script>
