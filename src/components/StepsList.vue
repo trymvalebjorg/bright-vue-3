@@ -2,13 +2,13 @@
   <div class="list-group-flush">
     <div v-for="(step, i) in steps" :key="i" type="button" :class="{ 'step-active': currentStep.id === step.id }" class="list-group-item list-group-item-action d-flex align-items-center p-0">
       <div v-if="!stepsDone.includes(step)">
-        <BIconCircle @click="checkClicked(step)" class="mx-3" />
+        <BIconCircle @click="checkClicked(step)" :width="18" :height="18" class="ms-3 me-2" />
       </div>
       <div v-else>
-        <BIconCheckCircleFill @click="checkClicked(step)" class="mx-3" />
+        <BIconCheckCircleFill @click="checkClicked(step)" :width="18" :height="18" class="ms-3 me-2 BIconCheckCircleFill" />
       </div>
       <div @click="stepClicked(step)" class="w-100 m-2">
-        <p class="m-0">{{ step.title }}</p>
+        <p class="m-0" :class="{ 'text-decoration-line-through': stepsDone.includes(step) }">{{ step.title }}</p>
       </div>
     </div>
   </div>
@@ -47,4 +47,10 @@ export default {
 }
 </script>
 
-<style></style>
+<style lang="scss" scoped>
+@import '../assets/styles/custom.scss';
+
+.BIconCheckCircleFill {
+  color: $primary;
+}
+</style>

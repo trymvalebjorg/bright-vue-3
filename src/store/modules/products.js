@@ -8,6 +8,9 @@ const getters = {
   getProducts: (state) => {
     return state.all
   },
+  getProductById: (state) => (id) => {
+    return state.all.find((product) => product.id === id)
+  },
 }
 
 // actions (dispatch)

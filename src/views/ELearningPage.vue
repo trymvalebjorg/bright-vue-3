@@ -3,8 +3,42 @@
     <div class="row py-5">
       <section class="col-8">
         <div class="row mb-3">
-          <h2>{{ currentStep.title }}</h2>
-          <p>{{ currentStep.description }}</p>
+          <section class="col-auto d-flex  justify-content-between w-100">
+            <h2 class="m-0 p-0">{{ currentStep.title }}</h2>
+            <button class="btn p-0" href="#" @click="nextClicked(currentStep)"></button>
+            <nav aria-label="Course navigation">
+              <ul class="pagination m-0">
+                <li class="page-item">
+                  <a class="page-link" href="#" aria-label="Previous" @click="previousClicked(currentStep)">
+                    <span aria-hidden="true"><BIconArrowLeftShort /></span>
+                  </a>
+                </li>
+                <li class="page-item">
+                  <a class="page-link" href="#" aria-label="Next" @click="nextClicked(currentStep)">
+                    <span aria-hidden="true"><BIconArrowRightShort /></span>
+                  </a>
+                </li>
+              </ul>
+            </nav>
+          </section>
+          <div>
+            <nav style="--bs-breadcrumb-divider: '>';" aria-label="breadcrumb">
+              <ol class="breadcrumb text-muted m-0">
+                <li class="breadcrumb-item">
+                  {{ product.name }}
+                </li>
+                <li class="breadcrumb-item" aria-current="page">
+                  {{ currentRepair.title }}
+                </li>
+                <li class="breadcrumb-item" aria-current="page">
+                  {{ currentStep.title }}
+                </li>
+              </ol>
+            </nav>
+          </div>
+          <div class="description mt-3">
+            <p>{{ currentStep.description }}</p>
+          </div>
         </div>
         <div v-if="currentStep.video">
           <VuePlyr @ended="nextClicked">
@@ -16,32 +50,21 @@
         <div v-else-if="currentStep.image && !currentStep.video">
           <img :src="`https://bright-web-api.azurewebsites.net/images/${currentStep.image}`" class="img-fluid" :alt="`Image of `" />
         </div>
-        <nav class="my-3" aria-label="Navigation">
-          <ul class="pagination pagination-lg justify-content-between">
-            <li class="page-item">
-              <a class="page-link" href="#" tabindex="-1" aria-disabled="true" @click="previousClicked">Previous</a>
-            </li>
-
-            <li class="page-item">
-              <button class="page-link" href="#" @click="nextClicked(currentStep)">Next</button>
-            </li>
-          </ul>
-        </nav>
       </section>
 
-      <aside class="col">
+      <aside class="col-4">
         <section>
           <h3>Course Content:</h3>
           <div class="progress my-3" style="height: 20px">
-            <div class="progress-bar progress-bar-striped" :style="{ width: (stepsDone.length / steps.length) * 100 + '%' }" role="progressbar" :aria-valuenow="stepsDone.length" aria-valuemin="0" :aria-valuemax="steps.length">
+            <div class="progress-bar" :style="{ width: (stepsDone.length / steps.length) * 100 + '%' }" role="progressbar" :aria-valuenow="stepsDone.length" aria-valuemin="0" :aria-valuemax="steps.length">
               <p class="m-0" v-if="stepsDone.length > 0">{{ stepsDone.length }} / {{ steps.length }}</p>
             </div>
           </div>
         </section>
 
         <section class="accordion" id="accordion">
-          <div v-for="(repair, i) in repairs" :key="i" class="">
-            <h2 class="accordion-header" :id="`heading${repair.id}`">
+          <div v-for="(repair, i) in repairs" :key="i" class="accordion-item">
+            <h2 class="accordion-header " :id="`heading${repair.id}`">
               <button class="accordion-button collapsed-show" :class="{ collapsed: !repair.stepIds.includes(currentStep.id) }" type="button" data-bs-toggle="collapse" :data-bs-target="`#collapse${repair.id}`" aria-expanded="false" :aria-controls="`collapse${repair.id}`">
                 <div class="col">
                   <div class="row ">
@@ -80,14 +103,15 @@ import StepsList from '../components/StepsList.vue'
 import { useStore } from 'vuex'
 import { computed } from 'vue'
 import { useRouter } from 'vue-router'
+import { BIconArrowRightShort, BIconArrowLeftShort } from 'bootstrap-icons-vue'
 
 export default {
-  components: { VuePlyr, StepsList },
+  components: { VuePlyr, StepsList, BIconArrowRightShort, BIconArrowLeftShort },
   setup() {
     // Declare store & router
     const store = useStore()
     const router = useRouter()
-
+    const product = computed(() => store.getters['products/getProductById'](1))
     const repairId = 1
     const repairs = computed(() => store.getters['repairs/getRepairsByProductId'](1))
     const stepsDone = computed(() => store.state.elearning.stepsDone)
@@ -117,6 +141,7 @@ export default {
     }
 
     const completeStep = (step) => {
+      setCurrentStep(step)
       store.commit('elearning/setStepDoneUndone', step)
       store.commit('repairs/setStepsDoneRepair', step)
     }
@@ -144,7 +169,7 @@ export default {
 
     setCurrentStep(steps[0])
 
-    return { repairs, repairId, setCurrentStep, currentStep, currentRepair, completeStep, stepsDone, steps, nextClicked, previousClicked, router, test }
+    return { repairs, repairId, setCurrentStep, currentStep, currentRepair, completeStep, stepsDone, steps, nextClicked, previousClicked, router, test, product }
   },
 }
 </script>
