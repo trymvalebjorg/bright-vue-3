@@ -5,6 +5,10 @@ $success: #9fd18b;
 
 @import 'node_modules/bootstrap/scss/bootstrap';
 
+.step-active {
+  background-color: $accordion-button-active-bg;
+}
+
 // Create your own map
 $custom-colors: (
   'tertiary': #9fd18b,

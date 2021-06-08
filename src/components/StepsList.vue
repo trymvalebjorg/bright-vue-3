@@ -1,38 +1,48 @@
 <template>
-  <main class="container">
-    <div class="list-group-flush">
-      <button v-for="(step, i) in stepsList" :key="i" type="button" class="list-group-item list-group-item-action d-flex align-items-center" aria-current="true" @click="stepClicked(step.id)">
-        <BIconCircle class="me-3" />
+  <div class="list-group-flush">
+    <div v-for="(step, i) in steps" :key="i" type="button" :class="{ 'step-active': currentStep.id === step.id }" class="list-group-item list-group-item-action d-flex align-items-center p-0">
+      <div v-if="!stepsDone.includes(step)">
+        <BIconCircle @click="checkClicked(step)" class="mx-3" />
+      </div>
+      <div v-else>
+        <BIconCheckCircleFill @click="checkClicked(step)" class="mx-3" />
+      </div>
+      <div @click="stepClicked(step)" class="w-100 m-2">
         <p class="m-0">{{ step.title }}</p>
-      </button>
+      </div>
     </div>
-  </main>
+  </div>
 </template>
 
 <script>
-import axios from 'axios'
-import { reactive, toRefs, toRef } from 'vue'
-import { BIconCircle } from 'bootstrap-icons-vue'
+import { toRef, computed } from 'vue'
+import { BIconCircle, BIconCheckCircleFill } from 'bootstrap-icons-vue'
+import { useStore } from 'vuex'
 export default {
   props: {
     repairId: Number,
   },
   components: {
     BIconCircle,
+    BIconCheckCircleFill,
   },
   setup(props, context) {
-    const steps = reactive({ stepsList: [] })
+    const store = useStore()
+
     const repairId = toRef(props, 'repairId')
+    const steps = computed(() => store.getters['repairs/getStepsByRepairId'](repairId.value))
+    const stepsDone = computed(() => store.state.elearning.stepsDone)
+    const currentStep = computed(() => store.state.elearning.currentStep)
 
-    axios(`https://bright-web-api.azurewebsites.net/api/Steps/get-steps-by-repair-id/${repairId.value}`).then((response) => {
-      steps.stepsList = response.data
-    })
-
-    function stepClicked(id) {
-      context.emit('stepClicked', id)
+    function stepClicked(step) {
+      context.emit('stepClicked', step)
     }
 
-    return { ...toRefs(steps), stepClicked }
+    function checkClicked(step) {
+      context.emit('checkClicked', step)
+    }
+
+    return { stepClicked, checkClicked, steps, stepsDone, currentStep }
   },
 }
 </script>
