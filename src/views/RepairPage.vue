@@ -6,7 +6,7 @@
           <h2 class="text-primary">{{ repair.title }}</h2>
         </div>
 
-        <div class="row" v-for="(step, i) in stepsList" :key="i">
+        <div class="row" v-for="(step, i) in steps" :key="i">
           <div class="accordion accordion" id="accordion">
             <div class="accordion-item">
               <h2 class="accordion-header" id="headingOne">
@@ -28,15 +28,16 @@
                 </div>
 
                 <div class="accordion-body row" v-else-if="step.video">
-                  <div class="col-6">
-                    {{ step.description }}
-                  </div>
-                  <div class="col-6">
+                  <div class="mb-3">
                     <VuePlyr>
                       <video controls playsinline>
                         <source :src="`https://bright-web-api.azurewebsites.net/Videos/${step.video}`" type="video/mp4" />
                       </video>
                     </VuePlyr>
+                  </div>
+
+                  <div>
+                    {{ step.description }}
                   </div>
                 </div>
 
@@ -62,7 +63,7 @@
           <div class="list-group-item">
             <div class="d-flex w-100 justify-content-between align-items-center">
               <h6 class="mb-1"><BIconBarChartSteps height="25" width="25" class="me-2" /> Steps</h6>
-              <p class="m-0">{{ stepsList.length }} steps</p>
+              <p class="m-0">{{ steps.length }} steps</p>
             </div>
           </div>
           <div class="list-group-item">
@@ -72,7 +73,7 @@
             </div>
           </div>
           <div class="d-flex w-100 justify-content-evenly row mt-4">
-            <div v-for="(tool, i) in toolsList" :key="i" class="col d-flex justify-content-center align-items-center flex-column ">
+            <div v-for="(tool, i) in repair.tools" :key="i" class="col d-flex justify-content-center align-items-center flex-column ">
               <img :src="`https://bright-web-api.azurewebsites.net/images/tools/${tool.image}`" class="icon" :alt="`Image of ${tool.name}`" />
               <p class="mt-1">{{ tool.name }}</p>
             </div>
@@ -88,35 +89,21 @@
 
 <script>
 import VuePlyr from 'vue-plyr'
-import axios from 'axios'
 import { useRoute } from 'vue-router'
-import { reactive, toRefs } from 'vue'
-import { BIconSpeedometer, BIconBarChartSteps, BIconClock } from 'bootstrap-icons-vue'
-
+import { computed } from 'vue'
+import { useStore } from 'vuex'
+import { BIconSpeedometer, BIconClock, BIconBarChartSteps } from 'bootstrap-icons-vue'
 export default {
   setup() {
-    const repair = reactive({})
-    const repairId = useRoute().params.id
-    const steps = reactive({ stepsList: [] })
-    const tools = reactive({ toolsList: [] })
+    const repairId = parseInt(useRoute().params.id)
+    const store = useStore()
+    const repair = computed(() => store.getters['repairs/getRepairById'](repairId))
+    const steps = computed(() => store.getters['repairs/getStepsByRepairId'](repairId))
 
-    axios(`https://bright-web-api.azurewebsites.net/api/Repairs/get-repair-by-id/${repairId}`).then((response) => {
-      repair.title = response.data.title
-      repair.description = response.data.description
-      repair.image = response.data.image
-      repair.difficulty = response.data.difficulty
-      repair.time = response.data.time
-      repair.pdf = response.data.pdf
-      repair.productId = response.data.productId
-      tools.toolsList = response.data.tools
-      repair.toolIds = response.data.toolIds
-      repair.stepIds = response.data.stepIds
-    })
+    //TODO:
+    // 1. https://stackoverflow.com/questions/43027499/vuex-state-on-page-refresh
 
-    axios(`https://bright-web-api.azurewebsites.net/api/Steps/get-steps-by-repair-id/${repairId}`).then((response) => {
-      steps.stepsList = response.data
-    })
-    return { repair, ...toRefs(steps), ...toRefs(tools) }
+    return { repair, steps }
   },
   components: {
     BIconSpeedometer,
