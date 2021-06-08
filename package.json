@@ -13,11 +13,13 @@
     "bootstrap": "^5.0.0-beta3",
     "bootstrap-icons-vue": "^0.7.0",
     "core-js": "^3.6.5",
-    "vue": "^3.0.0",
+    "plyr": "^3.6.8",
+    "vue": "^3.0.11",
     "vue-horizontal": "^1.0.0",
     "vue-horizontal-scroll": "^0.2.4",
     "vue-plyr": "^7.0.0",
-    "vue-router": "^4.0.8"
+    "vue-router": "^4.0.8",
+    "xv": "^0.0.1"
   },
   "devDependencies": {
     "@vue/cli-plugin-babel": "~4.5.0",
