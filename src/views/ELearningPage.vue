@@ -163,13 +163,9 @@ export default {
       }
     }
 
-    const test = () => {
-      alert('video ended')
-    }
-
     setCurrentStep(steps[0])
 
-    return { repairs, repairId, setCurrentStep, currentStep, currentRepair, completeStep, stepsDone, steps, nextClicked, previousClicked, router, test, product }
+    return { repairs, repairId, setCurrentStep, currentStep, currentRepair, completeStep, stepsDone, steps, nextClicked, previousClicked, router, product }
   },
 }
 </script>

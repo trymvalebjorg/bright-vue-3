@@ -22,6 +22,9 @@ export default {
     store.dispatch('products/getAllProducts')
     store.dispatch('repairs/getAllRepairs')
     store.dispatch('repairs/getAllSteps')
+    store.dispatch('report/getReplacedParts')
+    store.dispatch('report/getRepairedParts')
+    store.dispatch('report/getReports')
   },
 }
 </script>
