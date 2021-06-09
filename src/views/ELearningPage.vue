@@ -1,16 +1,6 @@
 <template>
   <main class="container">
-    <section class="py-3">
-      <div class="row py-lg-3">
-        <div class="col">
-          <h1 class="fw-light">E-Learning</h1>
-          <p class="lead text-muted">
-            We need data! Select your product, then add parts replaced and if you have repaired one of the parts add that last. Click ‘send report’ and that’s it! Thank you for helping us out.
-          </p>
-        </div>
-      </div>
-    </section>
-    <div class="row">
+    <div class="row py-5">
       <section class="col-8">
         <div class="row mb-3">
           <section class="col-auto d-flex  justify-content-between w-100">

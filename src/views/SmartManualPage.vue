@@ -5,7 +5,7 @@
         <div class="col ">
           <h1 class="fw-light">Smart Manual</h1>
           <p class="lead text-muted">
-            Vi i BRIGHT jobber tett med FNs bærekraftsmål, og derfor er produktene våre reparerbare og kan gjenvinnes.
+            The perfect place to gather information about how to repair and what tools you need.
           </p>
         </div>
       </div>
