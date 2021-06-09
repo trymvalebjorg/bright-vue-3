@@ -68,11 +68,14 @@ import { computed, reactive, toRefs } from 'vue'
 import { useStore } from 'vuex'
 import VueNumberInput from '@chenfengyuan/vue-number-input'
 import axios from 'axios'
+import { useRouter } from 'vue-router'
 
 export default {
   components: { VueNumberInput },
   setup() {
     const store = useStore()
+    const router = useRouter()
+
     const products = computed(() => store.getters['products/getProducts'])
     const replacedParts = computed(() => store.getters['report/getReplacedParts'])
     const repairedParts = computed(() => store.getters['report/getRepairedParts'])
@@ -87,6 +90,10 @@ export default {
         .catch((error) => {
           console.log(error)
         })
+
+      setTimeout(() => {
+        router.push('/thankyou')
+      }, 1000)
     }
     return { products, replacedParts, repairedParts, ...toRefs(report), sendReport }
   },
