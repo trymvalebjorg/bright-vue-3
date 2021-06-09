@@ -1,5 +1,5 @@
 import { createWebHistory, createRouter } from 'vue-router'
-import SmartManual from '../views/SmartManualPage'
+import Handbook from '../views/SmartManualPage'
 import Home from '../views/HomePage'
 import ReportPage from '../views/ReportPage'
 import RepairPage from '../views/RepairPage'
@@ -18,13 +18,13 @@ const routes = [
     component: ELearningPage,
   },
   {
-    name: 'SmartManual',
-    path: '/manual',
-    component: SmartManual,
+    name: 'HandBook',
+    path: '/handbook',
+    component: Handbook,
   },
   {
     name: 'RepairPage',
-    path: '/manual/:id',
+    path: '/handbook/:id',
     component: RepairPage,
   },
   {

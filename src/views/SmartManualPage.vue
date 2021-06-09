@@ -3,7 +3,7 @@
     <section class="py-3">
       <div class="row py-lg-3">
         <div class="col ">
-          <h1 class="fw-light">Smart Manual</h1>
+          <h1 class="fw-light">Handbook</h1>
           <p class="lead text-muted">
             The perfect place to gather information about how to repair and what tools you need.
           </p>

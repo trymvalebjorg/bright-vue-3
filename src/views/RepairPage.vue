@@ -78,7 +78,7 @@
               <p class="mt-1">{{ tool.name }}</p>
             </div>
             <div class="row d-flex justify-content-center mt-4">
-              <button class="btn btn-primary">Download PDF</button>
+              <a href="https://bright-web-api.azurewebsites.net/images/tools/hammer.svg" class="btn btn-primary">Download PDF</a>
             </div>
           </div>
         </div>

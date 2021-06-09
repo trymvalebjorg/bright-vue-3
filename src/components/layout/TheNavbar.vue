@@ -13,9 +13,9 @@
             </router-link>
           </li>
           <li>
-            <router-link to="/manual" class="nav-link link-light">
+            <router-link to="/handbook" class="nav-link link-light">
               <BIconBook class="bi d-block mx-auto" height="1.5rem" width="1.5rem" />
-              Smart Manual
+              Handbook
             </router-link>
           </li>
           <li>
