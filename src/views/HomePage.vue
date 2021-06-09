@@ -60,7 +60,7 @@
         >
         <h2>Handbook</h2>
         <p>The perfect place to gather information about how to repair and what tools you need.</p>
-        <router-link to="/manual" class="btn btn-primary icon-btn ">View details »</router-link>
+        <router-link to="/handbook" class="btn btn-primary icon-btn ">View details »</router-link>
       </div>
 
       <div class="col-lg-4">
