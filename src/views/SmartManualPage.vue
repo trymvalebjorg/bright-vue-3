@@ -1,8 +1,8 @@
 <template>
   <main class="container">
     <section class="py-3">
-      <div class="row py-lg-5">
-        <div class="col-lg-6 col-md-8 ">
+      <div class="row py-lg-3">
+        <div class="col ">
           <h1 class="fw-light">Smart Manual</h1>
           <p class="lead text-muted">
             Vi i BRIGHT jobber tett med FNs bærekraftsmål, og derfor er produktene våre reparerbare og kan gjenvinnes.

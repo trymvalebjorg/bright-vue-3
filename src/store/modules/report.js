@@ -46,16 +46,6 @@ const actions = {
       commit('setReports', response.data)
     })
   },
-  postReport(report) {
-    axios
-      .put('https://bright-web-api.azurewebsites.net/api/Reports/add-report', report)
-      .then((response) => {
-        console.log(response)
-      })
-      .catch((error) => {
-        console.log(error)
-      })
-  },
 }
 
 export default {

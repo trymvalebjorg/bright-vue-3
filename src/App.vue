@@ -7,10 +7,10 @@
 <script>
 import TheHeader from './components/layout/TheHeader'
 import TheFooter from './components/layout/TheFooter'
+import { useStore } from 'vuex'
 import './assets/styles/custom.scss'
 import './assets/styles/style.scss'
 import 'bootstrap'
-import { useStore } from 'vuex'
 export default {
   name: 'App',
   components: {
