@@ -1,13 +1,14 @@
 import { createStore, createLogger } from 'vuex'
-// import VuexPersistence from 'vuex-persist'
+import VuexPersistence from 'vuex-persist'
 import products from './modules/products'
 import repairs from './modules/repairs'
 import elearning from './modules/elearning'
 import report from './modules/report'
-// const vuexLocal = new VuexPersistence({
-//   storage: window.localStorage,
-// })
-//  vuexLocal.plugin
+
+const vuexLocal = new VuexPersistence({
+  storage: window.localStorage,
+})
+
 export default createStore({
   modules: {
     products,
@@ -15,5 +16,5 @@ export default createStore({
     elearning,
     report,
   },
-  plugins: [createLogger()],
+  plugins: [createLogger(), vuexLocal.plugin],
 })
