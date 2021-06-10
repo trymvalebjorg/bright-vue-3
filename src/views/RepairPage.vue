@@ -1,7 +1,7 @@
 <template>
-  <main class="container">
-    <div class="row mt-4">
-      <div class="col-8">
+  <main class="container py-3 py-md-5">
+    <div class="row g-4">
+      <div class="col-md-8">
         <div class="row mb-2">
           <h2 class="text-primary">{{ repair.title }}</h2>
         </div>
@@ -50,7 +50,7 @@
         </div>
       </div>
 
-      <div class="col-4">
+      <div class="col-md-4">
         <h4 class="mb-3">Summary</h4>
 
         <div class="list-group list-group-flush">

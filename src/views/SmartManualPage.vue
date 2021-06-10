@@ -12,7 +12,7 @@
     </section>
     <section>
       <div class="row mb-5" v-for="(product, i) in products" :key="i">
-        <div class="col-lg-3 d-flex flex-column align-items-center ">
+        <div class="col-lg-3 d-flex flex-column">
           <div class="row">
             <h3>{{ product.name }}</h3>
           </div>
@@ -20,7 +20,7 @@
             <img :src="`https://bright-web-api.azurewebsites.net/Images/products/${product.image}`" class="product-img d-none d-lg-flex p-0 m-0 align-middle" alt="Picture of {{ product.name }}" />
           </div>
         </div>
-        <vue-horizontal responsive class="col-lg-9 p-0">
+        <vue-horizontal :button-between="false" responsive class="col-lg-9 p-0">
           <RepairList :productId="product.id"></RepairList>
         </vue-horizontal>
       </div>

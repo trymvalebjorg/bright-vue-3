@@ -1,6 +1,6 @@
 <template>
   <div id="myCarousel" class="carousel slide" data-bs-ride="carousel">
-    <div class="carousel-indicators">
+    <div class="carousel-indicators my-2">
       <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="0" class="" aria-label="Slide 1"></button>
       <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="1" aria-label="Slide 2" class=""></button>
       <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="2" aria-label="Slide 3" class="active" aria-current="true"></button>
@@ -13,7 +13,7 @@
           <div class="carousel-caption text-start">
             <h1>Your very own digital handbook</h1>
             <p>Always have your handbook at hand when performing a repair. You can download it and have it with you anywhere.</p>
-            <router-link to="/manual" class="btn btn-primary icon-btn btn-lg">Visit page »</router-link>
+            <router-link to="/manual" class="btn btn-primary icon-btn btn-md-lg btn-md">Visit page »</router-link>
           </div>
         </div>
       </div>
@@ -24,7 +24,7 @@
           <div class="carousel-caption">
             <h1 class="eLearningHeader">Learn how to repair with E-learning</h1>
             <p>Want to join our community? Sign up and learn how to repair and maintain Bright smartlamps.</p>
-            <router-link to="/elearning" class="btn btn-primary icon-btn btn-lg">Visit page »</router-link>
+            <router-link to="/elearning" class="btn btn-primary icon-btn btn-md-lg btn-md">Visit page »</router-link>
           </div>
         </div>
       </div>
@@ -35,7 +35,7 @@
           <div class="carousel-caption text-end">
             <h1 class="reportHeader">Give us data with a report</h1>
             <p>An easy and quick way to send us the data we need, after a successful repair .</p>
-            <router-link to="/report" class="btn btn-primary icon-btn btn-lg ">Visit page »</router-link>
+            <router-link to="/report" class="btn btn-primary icon-btn btn-md-lg btn-md">Visit page »</router-link>
           </div>
         </div>
       </div>
@@ -53,7 +53,7 @@
   </div>
 
   <div class="container marketing">
-    <div class="row icon-row pt-5 pb-5">
+    <div class="row icon-row pt-5 pb-5 gy-5 overflow-hidden">
       <div class="col-lg-4">
         <BIconBook class="bd-placeholder-img icon mb-3" width="140" height="140" role="img" aria-label="Placeholder: 140x140" preserveAspectRatio="xMidYMid slice" focusable="false"
           ><title>Placeholder</title><rect width="100%" height="100%" fill="#777"></rect><text x="50%" y="50%" fill="#777" dy=".3em">140x140</text></BIconBook
@@ -84,7 +84,7 @@
 
     <hr class="featurette-divider" />
 
-    <div class="row featurette pt-5 pb-5">
+    <div class="row featurette px-5 py-md-5">
       <div class="col-md-7">
         <h2 class="featurette-heading heading">Your own digital handbook. <span class="heading2">Use it anywhere.</span></h2>
         <p class="lead">"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
@@ -97,7 +97,7 @@
 
     <hr class="featurette-divider" />
 
-    <div class="row featurette pt-5 pb-5">
+    <div class="row featurette px-2 px-md-5">
       <div class="col-md-7 order-md-2">
         <h2 class="featurette-heading heading">Every repair ends with a report. <span class="heading2">Send it to us.</span></h2>
         <p class="lead">"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
@@ -110,7 +110,7 @@
 
     <hr class="featurette-divider" />
 
-    <div class="row featurette pt-5 pb-5">
+    <div class="row featurette px-2 px-md-5">
       <div class="col-md-7">
         <h2 class="featurette-heading heading">We need more workers. <span class="heading2">Get your degree.</span></h2>
         <p class="lead">"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
@@ -160,6 +160,8 @@ export default {
 
 .homePageImg {
   width: 100%;
+  min-height: 20rem;
+  object-fit: cover;
 }
 
 .heading {

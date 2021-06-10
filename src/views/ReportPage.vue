@@ -29,14 +29,14 @@
     <section class="col-12 mb-5 container">
       <div class="row">
         <div class="row mb-2">
-          <h2 class="text-primary mb-5">2. Select replaced part</h2>
+          <h2 class="mb-5">2. Select replaced part</h2>
         </div>
         <div class="row mb-2">
           <label v-for="replacedPart in replacedParts" :key="replacedPart.id" class="d-flex flex-column w-25 align-items-center justify-content-center">
             <input type="checkbox" name="replacedPart" :value="`${replacedPart.id}`" v-model.number="replacedPartIds" />
             <img :src="`https://bright-web-api.azurewebsites.net/Images/parts/${replacedPart.image}`" class="p-0 m-0 part" alt="Icon of {{ replacedPart.name }}" />
             <h6 class="d-inline-block mt-2 text-center">{{ replacedPart.name }}</h6>
-            <VueNumberInput controls size="small" center rounded :min="1" :max="10"></VueNumberInput>
+            <VueNumberInput class="d-none d-sm-block" controls size="small" center rounded :min="1" :max="10"></VueNumberInput>
           </label>
         </div>
       </div>
@@ -45,14 +45,14 @@
     <section class="col-12 mb-5 container">
       <div class="row">
         <div class="row mb-2">
-          <h2 class="text-primary mb-5">3. Select repaired part</h2>
+          <h2 class="mb-5">3. Select repaired part</h2>
         </div>
         <div class="row mb-2">
           <label v-for="repairedPart in repairedParts" :key="repairedPart.id" class="d-flex flex-column w-25 align-items-center justify-content-center">
             <input type="checkbox" name="repairedPart" :value="`${repairedPart.id}`" v-model.number="repairedPartIds" />
             <img :src="`https://bright-web-api.azurewebsites.net/Images/parts/${repairedPart.image}`" class="p-0 m-0 part" alt="Icon of {{ repairedPart.name }}" />
             <h6 class="d-inline-block mt-2 text-center">{{ repairedPart.name }}</h6>
-            <VueNumberInput controls size="small" center rounded :min="1" :max="10"></VueNumberInput>
+            <VueNumberInput class="d-none d-sm-block" controls size="small" center rounded :min="1" :max="10"></VueNumberInput>
           </label>
         </div>
       </div>
@@ -129,10 +129,17 @@ export default {
   opacity: 0.2;
 }
 
+.product-img + h4 {
+  opacity: 0.2;
+}
+
 input[type='radio']:checked + .product-img {
   opacity: 1;
 }
 
+input[type='radio']:checked + .product-img + h4 {
+  opacity: 1;
+}
 input[type='checkbox']:checked + .part {
   opacity: 1;
 }

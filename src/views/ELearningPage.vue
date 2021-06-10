@@ -1,7 +1,7 @@
 <template>
   <main class="container">
     <div class="row py-5">
-      <section class="col-8">
+      <section class="col-md-8">
         <div class="row mb-3">
           <section class="col-auto d-flex  justify-content-between w-100">
             <h2 class="m-0 p-0">{{ currentStep.title }}</h2>
@@ -52,7 +52,7 @@
         </div>
       </section>
 
-      <aside class="col-4">
+      <aside class="col-md-4">
         <section>
           <h3>Course Content:</h3>
           <div class="progress my-3" style="height: 20px">
