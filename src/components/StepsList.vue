@@ -42,8 +42,6 @@ export default {
       context.emit('checkClicked', step)
     }
 
-    console.log(stepsDone.value)
-    console.log(stepsDone.value.includes(stepsDone.value[0]))
     return { stepClicked, checkClicked, steps, stepsDone, currentStep }
   },
 }

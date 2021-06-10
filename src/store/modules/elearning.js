@@ -51,7 +51,6 @@ const mutations = {
       state.currentRepair.isActive = true
     }
   },
-  // TODO: Skriv om denne hvis du får tid, trenger en for remove og en for add
   setStepDoneUndone(state, currentStep) {
     if (!currentStep.isDone && !state.stepsDone.includes(currentStep)) {
       state.currentStep = currentStep
