@@ -5,6 +5,7 @@ import ReportPage from '../views/ReportPage'
 import RepairPage from '../views/RepairPage'
 import ELearningPage from '../views/ELearningPage'
 import ThankyouPage from '../views/ThankyouPage'
+import NotFoundPage from '../views/'
 
 const routes = [
   {
@@ -37,6 +38,8 @@ const routes = [
     path: '/thankyou',
     component: ThankyouPage,
   },
+  { path: '/404', component: NotFoundPage },
+  { path: '*', redirect: '/404' },
 ]
 
 const router = createRouter({
