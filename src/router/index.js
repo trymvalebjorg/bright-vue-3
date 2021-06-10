@@ -5,7 +5,7 @@ import ReportPage from '../views/ReportPage'
 import RepairPage from '../views/RepairPage'
 import ELearningPage from '../views/ELearningPage'
 import ThankyouPage from '../views/ThankyouPage'
-import NotFoundPage from '../views/'
+import NotFoundPage from '../views/NotFoundPage'
 
 const routes = [
   {
@@ -38,8 +38,7 @@ const routes = [
     path: '/thankyou',
     component: ThankyouPage,
   },
-  { path: '/404', component: NotFoundPage },
-  { path: '*', redirect: '/404' },
+  { name: 'NotFound', path: '/:catchAll(.*)', component: NotFoundPage },
 ]
 
 const router = createRouter({
